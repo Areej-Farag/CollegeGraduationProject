@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "67c97cf827fd497031ebcd0e"
+  },
+  "name": "Ammeter",
+  "description": "Measures electric current",
+  "image": "ammeter.png",
+  "animation": "ammeter.gif"
+},
+{
+  "_id": {
+    "$oid": "67c97cf827fd497031ebcd0f"
+  },
+  "name": "Voltmeter",
+  "description": "Measures voltage",
+  "image": "voltmeter.png",
+  "animation": "voltmeter.gif"
+},
+{
+  "_id": {
+    "$oid": "67c97cf827fd497031ebcd10"
+  },
+  "name": "Resistor",
+  "description": "Limits electric current",
+  "image": "resistor.png",
+  "animation": "resistor.gif"
+},
+{
+  "_id": {
+    "$oid": "67c987bd315e1bac8c3c244b"
+  },
+  "name": "Beaker",
+  "description": "Used to hold and mix liquids",
+  "image": "beaker.png",
+  "animation": "beaker.gif"
+},
+{
+  "_id": {
+    "$oid": "67c987bd315e1bac8c3c244c"
+  },
+  "name": "Pipette",
+  "description": "Used to transfer small volumes of liquid",
+  "image": "pipette.png",
+  "animation": "pipette.gif"
+}]

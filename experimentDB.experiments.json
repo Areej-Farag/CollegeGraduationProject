@@ -1,0 +1,115 @@
+[{
+  "_id": {
+    "$oid": "67c98041315e1bac8c3c244a"
+  },
+  "number": 1,
+  "name": "Ohm's Law Experiment",
+  "description": "This experiment verifies Ohm's Law by measuring voltage and current across a resistor.",
+  "domain": "Physics",
+  "subDomain": "Electricity",
+  "basedOn": "Ohm's Law: V = I * R",
+  "steps": [
+    {
+      "verb": "Connect",
+      "attrs": [
+        {
+          "key": "Ammeter",
+          "value": "In series with resistor"
+        }
+      ]
+    },
+    {
+      "verb": "Measure",
+      "attrs": [
+        {
+          "key": "Current",
+          "value": "Using Ammeter"
+        }
+      ]
+    },
+    {
+      "verb": "Calculate",
+      "attrs": [
+        {
+          "key": "Voltage",
+          "value": "Using V = I * R"
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "$oid": "67c97cf827fd497031ebcd0e"
+    },
+    {
+      "$oid": "67c97cf827fd497031ebcd10"
+    }
+  ],
+  "parameters": [
+    {
+      "$oid": "67c97b6227fd497031ebcd0b"
+    },
+    {
+      "$oid": "67c97b6227fd497031ebcd0c"
+    },
+    {
+      "$oid": "67c97b6227fd497031ebcd0a"
+    }
+  ],
+  "equations": [
+    {
+      "$oid": "67c97c7a27fd497031ebcd0d"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "67c98bbb315e1bac8c3c2452"
+  },
+  "number": 2,
+  "name": "Acid-Base Reaction",
+  "description": "This experiment demonstrates the neutralization reaction between an acid and a base.",
+  "domain": "Chemistry",
+  "subDomain": "Acid-Base Reactions",
+  "steps": [
+    {
+      "verb": "Pour",
+      "attrs": [
+        {
+          "key": "Hydrochloric Acid",
+          "value": "Into a beaker"
+        }
+      ]
+    },
+    {
+      "verb": "Add",
+      "attrs": [
+        {
+          "key": "Sodium Hydroxide",
+          "value": "Using a pipette"
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "$oid": "67c987bd315e1bac8c3c244b"
+    },
+    {
+      "$oid": "67c987bd315e1bac8c3c244c"
+    }
+  ],
+  "parameters": [
+    {
+      "$oid": "67c98955315e1bac8c3c244d"
+    },
+    {
+      "$oid": "67c98955315e1bac8c3c244e"
+    }
+  ],
+  "equations": [
+    {
+      "$oid": "67c989d5315e1bac8c3c2451"
+    }
+  ]
+}]

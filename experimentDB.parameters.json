@@ -1,0 +1,80 @@
+[{
+  "_id": {
+    "$oid": "67c97b6227fd497031ebcd0a"
+  },
+  "name": "Voltage",
+  "unit": "V",
+  "symbol": "V"
+},
+{
+  "_id": {
+    "$oid": "67c97b6227fd497031ebcd0b"
+  },
+  "name": "Current",
+  "unit": "A",
+  "symbol": "I"
+},
+{
+  "_id": {
+    "$oid": "67c97b6227fd497031ebcd0c"
+  },
+  "name": "Resistance",
+  "unit": "Ω",
+  "symbol": "R"
+},
+{
+  "_id": {
+    "$oid": "67c98955315e1bac8c3c244d"
+  },
+  "name": "Hydrochloric Acid",
+  "unit": "M",
+  "symbol": "HCl",
+  "properties": {
+    "atomicStructure": "H-Cl",
+    "color": "Colorless",
+    "smell": "Pungent",
+    "state": "Liquid"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c98955315e1bac8c3c244e"
+  },
+  "name": "Sodium Hydroxide",
+  "unit": "M",
+  "symbol": "NaOH",
+  "properties": {
+    "atomicStructure": "Na-OH",
+    "color": "White",
+    "smell": "Odorless",
+    "state": "Solid"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c98955315e1bac8c3c244f"
+  },
+  "name": "Sodium Chloride",
+  "unit": "g",
+  "symbol": "NaCl",
+  "properties": {
+    "atomicStructure": "Na-Cl",
+    "color": "White",
+    "smell": "Odorless",
+    "state": "Solid"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c98955315e1bac8c3c2450"
+  },
+  "name": "Water",
+  "unit": "mL",
+  "symbol": "H₂O",
+  "properties": {
+    "atomicStructure": "H-O-H",
+    "color": "Colorless",
+    "smell": "Odorless",
+    "state": "Liquid"
+  }
+}]

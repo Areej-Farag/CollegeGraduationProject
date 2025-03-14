@@ -1,0 +1,67 @@
+[{
+  "_id": {
+    "$oid": "67c97c7a27fd497031ebcd0d"
+  },
+  "eqFormula": {
+    "inputs": [
+      {
+        "operand": {
+          "$oid": "67c97b6227fd497031ebcd0b"
+        },
+        "operator": "*"
+      },
+      {
+        "operand": {
+          "$oid": "67c97b6227fd497031ebcd0c"
+        }
+      }
+    ],
+    "output": [
+      {
+        "$oid": "67c97b6227fd497031ebcd0a"
+      }
+    ]
+  },
+  "description": "Ohm's Law states that Voltage (V) is the product of Current (I) and Resistance (R).",
+  "measurementUnit": "V",
+  "operands": [
+    "I",
+    "R"
+  ],
+  "catalyst": "None"
+},
+{
+  "_id": {
+    "$oid": "67c989d5315e1bac8c3c2451"
+  },
+  "eqFormula": {
+    "inputs": [
+      {
+        "operand": {
+          "$oid": "67c98955315e1bac8c3c244d"
+        },
+        "operator": "+"
+      },
+      {
+        "operand": {
+          "$oid": "67c98955315e1bac8c3c244e"
+        },
+        "operator": "->"
+      }
+    ],
+    "output": [
+      {
+        "$oid": "67c98955315e1bac8c3c244f"
+      },
+      {
+        "$oid": "67c98955315e1bac8c3c2450"
+      }
+    ]
+  },
+  "description": "Reaction of Hydrochloric Acid with Sodium Hydroxide to form Salt and Water",
+  "operands": [
+    "HCl",
+    "NaOH"
+  ],
+  "catalyst": "None"
+}]
