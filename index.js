@@ -10,7 +10,7 @@ const equationRoutes = require("./routes/equation.routes");
 const experimentRoutes = require("./routes/experiment.routes");
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 // Middleware
 app.use(cors());

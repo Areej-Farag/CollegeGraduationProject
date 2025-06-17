@@ -55,3 +55,100 @@ exports.deleteExperiment = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+exports.updateExperimentTools = async (req, res) => {
+  try {
+      const { experimentId } = req.params;
+      const { tools } = req.body;
+
+      // التحقق من وجود التجربة
+      const experiment = await Experiment.findById(experimentId);
+      if (!experiment) return res.status(404).json({ message: "Experiment not found" });
+
+      // تحديث الأدوات
+      experiment.tools = tools;
+      await experiment.save();
+
+      res.json({ message: "Tools updated successfully", experiment });
+  } catch (error) {
+      res.status(500).json({ error: error.message });
+  }
+};
+
+exports.updateExperimentParameters = async (req, res) => {
+  try {
+      const { experimentId } = req.params;
+      const { parameters } = req.body; // المصفوفة الجديدة من الـ Parameters
+
+      // تأكد أن parameters موجودة ومصفوفة
+      if (!parameters || !Array.isArray(parameters)) {
+          return res.status(400).json({ message: "Invalid parameters array" });
+      }
+
+      // تحديث تجربة معينة بالـ Parameters الجديدة
+      const updatedExperiment = await Experiment.findByIdAndUpdate(
+          experimentId,
+          { parameters }, // يتم استبدال القديم بالجديد
+          { new: true } // يرجع البيانات بعد التحديث
+      );
+
+      if (!updatedExperiment) {
+          return res.status(404).json({ message: "Experiment not found" });
+      }
+
+      res.json({ message: "Parameters updated successfully", updatedExperiment });
+
+  } catch (error) {
+      res.status(500).json({ error: error.message });
+  }
+};
+exports.getExperimentTools = async (req, res) => {
+  try {
+      const { experimentId } = req.params;
+
+      // البحث عن التجربة مع جلب الـ tools فقط
+      const experiment = await Experiment.findById(experimentId).populate("tools");
+
+      if (!experiment) {
+          return res.status(404).json({ message: "Experiment not found" });
+      }
+
+      res.json({ tools: experiment.tools });
+  } catch (error) {
+      res.status(500).json({ error: error.message });
+  }
+};
+exports.getExperimentParameters = async (req, res) => {
+  try {
+      const { experimentId } = req.params;
+
+      // البحث عن التجربة مع جلب الـ parameters فقط
+      const experiment = await Experiment.findById(experimentId).populate("parameters");
+
+      if (!experiment) {
+          return res.status(404).json({ message: "Experiment not found" });
+      }
+
+      res.json({ parameters: experiment.parameters });
+  } catch (error) {
+      res.status(500).json({ error: error.message });
+  }
+};
+
+// exports.updateExperimentToolsDetailed = async (req, res) => {
+//     try {
+//         const { experimentId } = req.params;
+//         const { tools } = req.body;
+
+//         // التحقق من وجود التجربة
+//         const experiment = await Experiment.findById(experimentId);
+//         if (!experiment) return res.status(404).json({ message: "Experiment not found" });
+
+//         // تحديث الأدوات مباشرة بكائناتها الجديدة
+//         experiment.tools = tools;
+//         await experiment.save();
+
+//         res.json({ message: "Tools updated successfully", experiment });
+//     } catch (error) {
+//         res.status(500).json({ error: error.message });
+//     }
+// };
