@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-require('dotenv').config();
+require("dotenv").config();
 
 // استدعاء الروترات
 const toolRoutes = require("./routes/tool.routes");
@@ -18,9 +18,19 @@ app.use(express.json());
 
 // الاتصال بقاعدة البيانات
 mongoose
-  .connect("mongodb+srv://rerefarag60:Areg002oo2@cluster0.8dtlv.mongodb.net/LabatoryDB")
+  .connect(
+    "mongodb+srv://rerefarag60:Areg002oo2@cluster0.8dtlv.mongodb.net/LabatoryDB"
+  )
   .then(() => console.log("Database connected successfully"))
   .catch((err) => console.error("Database connection error:", err));
+
+// ✅ Middleware CORS (مرة واحدة وبالإعدادات المطلوبة)
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  })
+);
 
 // استخدام الروترات
 app.use("/api/tools", toolRoutes);
