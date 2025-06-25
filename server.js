@@ -8,7 +8,8 @@ const toolRoutes = require("./routes/tool.routes");
 const parameterRoutes = require("./routes/parameter.routes");
 const equationRoutes = require("./routes/equation.routes");
 const experimentRoutes = require("./routes/experiment.routes");
-const uploadRoutes = require("./routes/uploadRoute"); // ده بتاع الصور
+const uploadRoutes = require("./routes/uploadRoute"); // ده بتاع الصور العامة
+const toolImageRoutes = require("./routes/toolImage.routes"); // ده بتاع صور الأدوات
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -25,10 +26,11 @@ mongoose
 
 // استخدام الروترات
 app.use("/api/tools", toolRoutes);
+app.use("/api/tools", toolImageRoutes); // رفع صورة الأداة
 app.use("/api/parameters", parameterRoutes);
 app.use("/api/equations", equationRoutes);
 app.use("/api/experiments", experimentRoutes);
-app.use("/api/upload", uploadRoutes); // ده الروت الجديد اللي ضفناه
+app.use("/api/upload", uploadRoutes); // الصور العامة اللي جوه imageModel
 
 // الصفحة الرئيسية
 app.get("/", (req, res) => {
