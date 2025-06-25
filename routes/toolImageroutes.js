@@ -8,8 +8,6 @@ const Tool = require("../models/tool"); // موديل الأداة
 // POST /api/tools/:id/upload-image
 router.post("/:id/upload-image", upload.single("image"), async (req, res) => {
   try {
-    console.log("🔍 محتوى req.file:");
-    console.log(req.file);
     const imageUrl = req.file.path;
     const tool = await Tool.findById(req.params.id);
     if (!tool) {
