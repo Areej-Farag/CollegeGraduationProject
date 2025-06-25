@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const ExperimentImage = require("./ExperimentImage");
 
 const experimentSchema = new mongoose.Schema({
   number: { type: Number, required: true, unique: true },
@@ -6,6 +7,7 @@ const experimentSchema = new mongoose.Schema({
   description: String,
   domain: String,
   subDomain: String,
+  experimentImage: [{ type: mongoose.Schema.Types.ObjectId, ref: "ExperimentImage" }],
   observation: [
     {
       question: { type: String, required: true },

@@ -31,7 +31,9 @@ exports.createTool = async (req, res) => {
 
 exports.updateTool = async (req, res) => {
   try {
-    const updatedTool = await Tool.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const updatedTool = await Tool.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
     if (!updatedTool) return res.status(404).json({ error: "Tool not found" });
     res.json(updatedTool);
   } catch (err) {
@@ -48,4 +50,3 @@ exports.deleteTool = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-

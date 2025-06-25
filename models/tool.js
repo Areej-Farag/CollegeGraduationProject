@@ -5,6 +5,7 @@ const toolSchema = new mongoose.Schema({
   description: String,
   image: String,
   animation: String,
+  category: String
 });
 
 module.exports = mongoose.model("Tool", toolSchema);
