@@ -8,6 +8,7 @@ const toolRoutes = require("./routes/tool.routes");
 const parameterRoutes = require("./routes/parameter.routes");
 const equationRoutes = require("./routes/equation.routes");
 const experimentRoutes = require("./routes/experiment.routes");
+const experimentImageRoutes = require("./routes/experimentImage.routes");
 
 const app = express();
 const PORT = process.env.PORT;
@@ -37,6 +38,7 @@ app.use("/api/tools", toolRoutes);
 app.use("/api/parameters", parameterRoutes);
 app.use("/api/equations", equationRoutes);
 app.use("/api/experiments", experimentRoutes);
+app.use("/api/experiment-images", experimentImageRoutes);
 
 // الصفحة الرئيسية
 app.get("/", (req, res) => {

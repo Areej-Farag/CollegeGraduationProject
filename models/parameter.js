@@ -4,6 +4,8 @@ const parameterSchema = new mongoose.Schema({
   name: String,
   unit: String,
   symbol: String,
+  image: String,
+  category: String,
   properties: {
     atomicStructure: String,
     color: String,
