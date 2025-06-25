@@ -2,8 +2,8 @@
 
 const express = require("express");
 const router = express.Router();
-const upload = require("../upload"); // الميدل وير اللي بيرفع الصور
-const Tool = require("../models/tool"); // موديل الأداة
+const upload = require("../upload"); 
+const Tool = require("../models/tool"); 
 
 // POST /api/tools/:id/upload-image
 router.post("/:id/upload-image", upload.single("image"), async (req, res) => {
@@ -15,7 +15,7 @@ router.post("/:id/upload-image", upload.single("image"), async (req, res) => {
       return res.status(404).json({ message: "Tool not found" });
     }
 
-    tool.image = imageUrl; // نحط لينك الصورة في الحقل بتاع الأداة
+    tool.image = imageUrl;
     await tool.save();
 
     res.json({ message: "Image uploaded and linked to tool", tool });
