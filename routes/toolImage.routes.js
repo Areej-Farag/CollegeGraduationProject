@@ -2,8 +2,8 @@
 
 const express = require("express");
 const router = express.Router();
-const upload = require("../upload"); 
-const Tool = require("../models/tool"); 
+const upload = require("../upload");
+const Tool = require("../models/tool");
 
 // POST /api/tools/:id/upload-image
 router.post("/:id/upload-image", upload.single("image"), async (req, res) => {
@@ -22,6 +22,25 @@ router.post("/:id/upload-image", upload.single("image"), async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Error uploading image" });
+  }
+});
+
+// ✅ GET /api/tools/:id/image - Get image URL by tool ID
+router.get("/:id/image", async (req, res) => {
+  try {
+    const tool = await Tool.findById(req.params.id);
+    if (!tool) {
+      return res.status(404).json({ message: "Tool not found" });
+    }
+
+    if (!tool.image) {
+      return res.status(404).json({ message: "No image found for this tool" });
+    }
+
+    res.json({ image: tool.image });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Error retrieving image" });
   }
 });
 

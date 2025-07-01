@@ -39,7 +39,7 @@ app.use(
 
 // استخدام الروترات
 app.use("/api/upload", uploadRoutes);
-app.use("/api/tools", toolImageRoutes); // رفع صورة الأداة
+app.use("/api/toolsImage", toolImageRoutes); // رفع صورة الأداة
 app.use("/api/tools", toolRoutes);
 app.use("/api/parameters", parameterRoutes);
 app.use("/api/equations", equationRoutes);
