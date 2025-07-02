@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const upload = require('../upload');
-const Image = require('../models/imageModel');
+const Image = require('../models/imageModel_tool');
 
 // API لرفع الصورة
 router.post('/', upload.single('image'), async (req, res) => {

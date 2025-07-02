@@ -7,6 +7,7 @@ const experimentSchema = new mongoose.Schema({
   description: String,
   domain: String,
   subDomain: String,
+  deviceImage: String,
   experimentImage: [{ type: mongoose.Schema.Types.ObjectId, ref: "ExperimentImage" }],
   observation: [
     {

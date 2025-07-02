@@ -13,6 +13,10 @@ const courseRoutes = require("./routes/course.routes");
 const commandRoutes = require("./routes/command.routes");
 const uploadRoutes = require("./routes/uploadRoute"); 
 const toolImageRoutes = require("./routes/toolImageroutes");
+const parameterImageRoutes = require("./routes/parameterImage.routes");
+const deviceImageRoutes = require("./routes/deviceImage.routes");
+
+
 
 const app = express();
 const PORT = process.env.PORT;
@@ -47,8 +51,8 @@ app.use("/api/experiments", experimentRoutes);
 app.use("/api/experiment-images", experimentImageRoutes);
 app.use("/api/commands", commandRoutes);
 app.use("/api/courses", courseRoutes);
-
-
+app.use("/api/parameter-image", parameterImageRoutes);
+app.use("/api/device-images", deviceImageRoutes);
 // الصفحة الرئيسية
 app.get("/", (req, res) => {
   res.send("API for Scientific Experiments is running...");
