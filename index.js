@@ -11,8 +11,8 @@ const experimentRoutes = require("./routes/experiment.routes");
 const experimentImageRoutes = require("./routes/experimentImage.routes");
 const courseRoutes = require("./routes/course.routes");
 const commandRoutes = require("./routes/command.routes");
-const uploadRoutes = require("./routes/uploadRoute"); // ده بتاع الصور العامة
-const toolImageRoutes = require("./routes/toolImageroutes"); // ده بتاع صور الأدوات
+const uploadRoutes = require("./routes/uploadRoute"); 
+const toolImageRoutes = require("./routes/toolImageroutes");
 
 const app = express();
 const PORT = process.env.PORT;

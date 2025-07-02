@@ -25,7 +25,6 @@ router.post("/:id/upload-image", upload.single("image"), async (req, res) => {
   }
 });
 
-// ✅ GET /api/tools/:id/image - Get image URL by tool ID
 router.get("/:id/image", async (req, res) => {
   try {
     const tool = await Tool.findById(req.params.id);
