@@ -42,5 +42,29 @@ router.get("/:id/image", async (req, res) => {
     res.status(500).json({ message: "Error retrieving image" });
   }
 });
+// DELETE /api/tools/:id/delete-image
+router.delete("/:id/delete-image", async (req, res) => {
+  try {
+    const tool = await Tool.findById(req.params.id);
+    if (!tool) {
+      return res.status(404).json({ message: "Tool not found" });
+    }
+
+    if (!tool.image) {
+      return res.status(404).json({ message: "No image to delete for this tool" });
+    }
+
+    // Optionally: Add Cloudinary deletion logic here if needed
+
+    tool.image = null;
+    await tool.save();
+
+    res.json({ message: "Image deleted successfully", tool });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Error deleting image" });
+  }
+});
+
 
 module.exports = router;

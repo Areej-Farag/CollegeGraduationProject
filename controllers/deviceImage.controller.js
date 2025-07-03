@@ -10,8 +10,8 @@ const uploadDeviceImage = async (req, res) => {
       return res.status(404).json({ message: "Experiment not found" });
     }
 
-    // push الصورة الجديدة على المصفوفة
-    experiment.deviceImage.push(imageUrl);
+    // Assign image directly instead of pushing
+    experiment.deviceImage = imageUrl;
     await experiment.save();
 
     res.json({ message: "Device image uploaded successfully", experiment });
