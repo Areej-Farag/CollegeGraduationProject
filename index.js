@@ -11,12 +11,10 @@ const experimentRoutes = require("./routes/experiment.routes");
 const experimentImageRoutes = require("./routes/experimentImage.routes");
 const courseRoutes = require("./routes/course.routes");
 const commandRoutes = require("./routes/command.routes");
-const uploadRoutes = require("./routes/uploadRoute"); 
-const toolImageRoutes = require("./routes/toolImageroutes");
+const uploadRoutes = require("./routes/upload.routes");
+const toolImageRoutes = require("./routes/toolImage.routes");
 const parameterImageRoutes = require("./routes/parameterImage.routes");
 const deviceImageRoutes = require("./routes/deviceImage.routes");
-
-
 
 const app = express();
 const PORT = process.env.PORT;
